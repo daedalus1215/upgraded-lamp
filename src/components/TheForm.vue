@@ -47,6 +47,9 @@
         <label for="how-other">Other</label>
       </div>
     </div>
+    <div class="form-control">
+      <rating-control v-model="rating"></rating-control>
+    </div>
     <div>
       <button>Save Data</button>
     </div>
@@ -56,8 +59,12 @@
 
 <script>
 import { setTransitionHooks } from 'vue';
+import RatingControl from './RatingControl.vue';
 
 export default {
+  components: {
+    RatingControl
+  },
   data() {
     return {
       userName: '',
@@ -65,7 +72,8 @@ export default {
       referrer: 'wom',
       interest: [],
       how: null,
-      userNameValidity: 'valid'
+      userNameValidity: 'valid',
+      rating: null
     }
   },
   methods: {
@@ -80,6 +88,8 @@ export default {
       console.log('how: ', this.how);
       this.interest = [];
       this.how = null;
+      console.log('Rating', this.rating)
+      this.rating = null;
     },
     validateInput() {
       if (this.userName === '') {
