@@ -78,17 +78,11 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log('Username: ', this.userName);
       this.userName = '';
-      console.log('user age: ', this.userAge);
       this.userAge = null;
-      console.log('referrer: ', this.referrer);
       this.referrer = 'wom';
-      console.log('checkbox: ', this.interest);
-      console.log('how: ', this.how);
       this.interest = [];
       this.how = null;
-      console.log('Rating', this.rating)
       this.rating = null;
     },
     validateInput() {
